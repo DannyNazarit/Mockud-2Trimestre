@@ -1,0 +1,341 @@
+img{
+    width: 500px;
+    height: 500px;
+}
+
+.container-all{
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'calibri';
+}
+
+.slide{
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 6.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.item-slide{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+.pagination{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.pagination-item:hover{
+    transform: scale(2);
+}
+
+.pagination-item img{
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.pagination-item:hover img{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+input[id="1"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(0, 0, 0);
+}
+
+input[id="1"]:checked ~ .pagination .pagination-item[for="1"]{
+    background: black;
+}
+
+input[id="2"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 1), 0, 0);
+}
+
+input[id="2"]:checked ~ .pagination .pagination-item[for="2"]{
+    background: #fff;
+}
+
+
+input[id="3"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 2), 0, 0);
+}
+
+input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{
+    background: #fff;
+}
+input[id="4"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 3), 0, 0);
+}
+
+input[id="4"]:checked ~ .pagination .pagination-item[for="4"]{
+    background: #fff;
+}
+input[id="5"]:checked ~ .slide{
+    animation: none;
+    transform: translate3d(calc(-100% * 4), 0, 0);
+}
+
+input[id="5"]:checked ~ .pagination .pagination-item[for="5"]{
+    background: #fff;
+}
+
+
+
+
+@keyframes autoplay{
+    20%{
+        transform: translate3d(calc(-100% * 0), 0, 0);
+    }
+    
+    40%{
+        transform: translate3d(calc(-100% * 1), 0, 0);
+    }
+    
+    60%{
+        transform: translate3d(calc(-100% * 2), 0, 0);
+    }
+    80%{
+        transform: translate3d(calc(-100% * 3), 0, 0);
+    }
+    100%{
+        transform: translate3d(calc(-100% * 4), 0, 0);
+    }
+}
+
+
+body{
+    background-image:url("imagenes/fondo.webp");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  
+    align-items: center;
+    justify-content: center;
+}
+/*estilo body*/
+
+header{
+    width: 100%;
+    background:#1f53c5;
+}
+#btn-menu{
+    display: none;
+}
+header label{
+    display:none;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    border-right: 1px solid #fff;
+
+}
+header label:hover{
+    cursor: pointer;
+    background: rgba(0,0,0,0.3);
+}
+.menu ul{
+    margin:0;
+    list-style:none  ;
+    padding: 0;
+    display:flex;
+    justify-content: flex-end;
+}
+.menu li{
+    border-left: 1px solid #fff;
+}
+.menu li:hover{
+    background:rgba(0,0,0,0.3);
+
+}
+.menu li:hover > ul{
+    display: block;
+    
+
+}
+.menu li a{
+    display: block ;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+
+}
+.menu li ul{
+    display: none;
+    position: absolute;
+    margin:0;
+    list-style:none  ;
+    padding: 0;
+    background: #1f53c5;
+    justify-content: flex-end;
+
+
+}
+.formulario-inicio_tecnico{
+    width :250px;
+    background:#24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37 px #000;
+   
+}
+.formulario-inicio_tecnico h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.controls{
+    width: 100%;
+    background: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+.formulario-inicio_tecnico p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.formulario-inicio_tecnico a{
+    color: white;
+    text-decoration: none;
+}
+.formulario-inicio_tecnico a:hover{
+    color: white;
+    text-decoration: underline;
+}
+.formulario-inicio_tecnico .botons{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px ;
+    
+}
+.formulario-inicio_cliente{
+    width :250px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37 px #000;
+}
+.formulario-inicio_cliente h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.controls{
+    width: 100%;
+    background: white;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+.formulario-inicio_cliente p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.formulario-inicio_cliente a{
+    color: white;
+    text-decoration: none;
+}
+.formulario-inicio_cliente a:hover{
+    color: white;
+    text-decoration: underline;
+}
+.formulario-inicio_cliente .botons{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px ;
+    align-content: center;
+    
+}
+
+@media(max-width: 768px)
+{
+    header label{
+        display: block;
+
+    }
+    .menu{
+        position: absolute;
+        background: #1f53c5;
+        width: 70%;
+        margin-left: -70%;
+        transition: all 0.5s;
+
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    .menu li {
+    border-top: 1px solid #fff;
+    }
+    #btn-menu:checked ~ .menu{
+        margin: 0;
+
+    }
+}
